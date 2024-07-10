@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>English for Ethiopia - Student Textbook Grade 12</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+</body>
+
+<script>
+  function myp (){
+      var gtsf = document.getElementById("excont1")
+      var gts = gtsf.contentDocument.getElementsByClassName("h5p-drag-task")[0]
+      var dragelemscont = gtsf.contentDocument.getElementsByClassName("h5p-drag-draggables-container")[0]
+      var qcont = gtsf.contentDocument.getElementsByClassName("h5p-question-content")[0]
+
+      var dragelemscontbd = dragelemscont.getBoundingClientRect();
+      var gtsfbd =  gtsf.getBoundingClientRect(); 
+      var gtsbd = gts.getBoundingClientRect();  
+      var qcontbd = qcont.getBoundingClientRect();
+
+      var padding = qcontbd.y
+      
+      dragelemscont.style.height="fit-content"
+      dragelemscont.style.transition= "auto 0.5s ease 0.5s";
+      var marginValue = 0
+      if( gtsfbd.y - padding > 0 || dragelemscont.children.length <= 0){
+          marginValue = 0
+      }else{
+          marginValue =Math.abs(gtsfbd.y - padding)
+      }
+
+      
+
+      // if( gtsfbd.y < 0 && ((dragelemscontbd.height + (gtsfbd.top * -1)) < gtsbd.height)){ 
+      //     marginValue =(gtsfbd.y * -1) + 50 
+      //     }
+      // else{
+      //     console.log("A state")
+      // }
+
+      //Enforce Max Margin
+      // console.log(marginValue + dragelemscontbd.height, gtsbd.height)
+      marginValue = marginValue + dragelemscontbd.height > gtsbd.height ? (- dragelemscontbd.height  + gtsbd.height) : marginValue
+      dragelemscont.style.marginTop = String(marginValue)+"px";
+      // console.log(dragelemscont.getBoundingClientRect(),gtsfbd, gtsbd, gtsfbd.y, dragelemscontbd.height + (gtsfbd.top * -1) ,  gtsbd.height);
+  }
+
+  function attempSubscription(){
+      setTimeout(
+      ()=>{
+        if (location.search.includes("249")){
+            // console.log("within")
+            
+            var resd = document.getElementsByTagName("app-page")[1].firstElementChild.addEventListener("scroll", myp)
+        }
+      },10
+    )
+  }
+ 
+</script>
+</html>

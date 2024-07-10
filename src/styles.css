@@ -1,0 +1,92 @@
+@import url("./styles/roboto.css");
+@import url("./styles/material-icons.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html.h5p-iframe{
+  /* overflow:hidden; */
+  overflow:auto;
+}
+
+div.framediv::after{
+
+  font-size: 1rem;
+  aspect-ratio: 1/1;
+  height: 1.8em;
+  width: auto;
+  text-align: center;
+  line-height: 1.8em;
+  background: #417fc6;
+  overflow: visible;
+  position: absolute;
+  color: white;
+  left: 3.2em;
+  top: 0.8em;
+  border-radius: 0.75em;
+}
+
+div.framediv.green::after{
+  background: #0a8137;
+}
+div.framediv.yellow::after{
+  background:#E59F0A;
+}
+div.framediv.red::after{
+  background:#D41042;
+}
+div.framediv.blue::after{
+  background:#1476C6;
+}
+div.framediv.revcol::after{
+  background:#15909C;
+}
+div.framediv.shiftIn::after{
+  left: 7em;
+}
+
+div.framediv.topzero::after{
+  top:0em;
+}
+
+div.framediv.ae1::after{
+  content: "1";
+}
+div.framediv.ae2::after{
+  content: "2";
+}
+div.framediv.ae3::after{
+  content: "3";
+}
+div.framediv.ae4::after{
+  content: "4";
+}
+div.framediv.ae5::after{
+  content: "5";
+}
+div.framediv.ae6::after{
+  content: "6";
+}
+div.framediv.ae7::after{
+  content: "7";
+}
+div.framediv.ae8::after{
+  content: "8";
+}
+div.framediv.ae9::after{
+  content: "9";
+}
+
+
+.tg{border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-f3nr{background-color:#acbdd6;border-color:#ffffff;font-size:100%;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-8i32{background-color:#f4f8fd;border-color:#ffffff;font-size:100%;text-align:left;vertical-align:top}
